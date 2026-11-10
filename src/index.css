@@ -1,1 +1,367 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Caveat:Regular";
+  src: url("https://static.figma.com/font/Caveat_wght__1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter:Bold";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Inter:Medium";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter:Regular";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter:Semi Bold";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Noto Sans Math:Regular";
+  src: url("https://static.figma.com/font/NotoSansMath-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Noto Sans Symbols2:Regular";
+  src: url("https://static.figma.com/font/NotoSansSymbols2-Regular_5") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Noto Sans Symbols:Black";
+  src: url("https://static.figma.com/font/NotoSansSymbols-VF_2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Noto Sans Symbols:Bold";
+  src: url("https://static.figma.com/font/NotoSansSymbols-VF_2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Noto Sans Symbols:Regular";
+  src: url("https://static.figma.com/font/NotoSansSymbols-VF_2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Noto Sans:Black";
+  src: url("https://static.figma.com/font/NotoSans-VF_3") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Noto Sans:Bold";
+  src: url("https://static.figma.com/font/NotoSans-VF_3") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Noto Sans:Regular";
+  src: url("https://static.figma.com/font/NotoSans-VF_3") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Outfit:Black";
+  src: url("https://static.figma.com/font/Outfit_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Outfit:Bold";
+  src: url("https://static.figma.com/font/Outfit_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Outfit:ExtraBold";
+  src: url("https://static.figma.com/font/Outfit_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Outfit:Medium";
+  src: url("https://static.figma.com/font/Outfit_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Outfit:Regular";
+  src: url("https://static.figma.com/font/Outfit_wght__2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    background: #f5efe6;
+  }
+  button,
+  a {
+    cursor: pointer;
+  }
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #c86d51;
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .font-caveat {
+    font-family: "Caveat:Regular", cursive;
+    font-weight: 400;
+  }
+  .font-inter-regular {
+    font-family: "Inter:Regular", sans-serif;
+    font-weight: 400;
+  }
+  .font-inter-medium {
+    font-family: "Inter:Medium", sans-serif;
+    font-weight: 500;
+  }
+  .font-inter-semibold {
+    font-family: "Inter:Semi Bold", sans-serif;
+    font-weight: 600;
+  }
+  .font-inter-bold {
+    font-family: "Inter:Bold", sans-serif;
+    font-weight: 700;
+  }
+  .font-outfit-regular {
+    font-family: "Outfit:Regular", sans-serif;
+    font-weight: 400;
+  }
+  .font-outfit-medium {
+    font-family: "Outfit:Medium", sans-serif;
+    font-weight: 500;
+  }
+  .font-outfit-bold {
+    font-family: "Outfit:Bold", sans-serif;
+    font-weight: 700;
+  }
+  .font-outfit-extrabold {
+    font-family: "Outfit:ExtraBold", sans-serif;
+    font-weight: 800;
+  }
+  .font-outfit-black {
+    font-family: "Outfit:Black", sans-serif;
+    font-weight: 900;
+  }
+}
+
+.pill {
+  display: inline-flex;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c86d51;
+  border-radius: 999px;
+  background: #c86d51;
+  padding: 0 25px;
+  font-family: "Inter:Semi Bold", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f5efe6;
+  white-space: nowrap;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+.pill:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.94);
+}
+.pill-dark {
+  border-color: #3b261d;
+  background: #3b261d;
+}
+.pill-outline {
+  border-color: #3b261d;
+  background: transparent;
+  color: #3b261d;
+}
+.logo-mark {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo-mark picture {
+  display: flex;
+}
+.logo-mark picture:first-child img {
+  width: 24.36px;
+  height: 13.44px;
+  margin-bottom: -3px;
+}
+.logo-mark picture:last-child img {
+  width: 30.24px;
+  height: 23.94px;
+}
+.logo-mark-large {
+  width: 112px;
+  height: 112px;
+}
+.logo-mark-large picture:first-child img {
+  width: 64.96px;
+  height: 35.84px;
+}
+.logo-mark-large picture:last-child img {
+  width: 80.64px;
+  height: 63.84px;
+}
+.ritual-side {
+  width: 300px;
+  border-block: 1px solid #f5efe6;
+  padding-block: 13px;
+  font-family: "Outfit:Regular";
+  font-size: 29px;
+  letter-spacing: 2px;
+}
+.ritual-side i {
+  margin-inline: 22px;
+  font-family: "Inter:Regular";
+  font-size: 12px;
+  font-style: normal;
+}
+.ritual-side em {
+  font-family: "Caveat:Regular";
+  font-size: 39px;
+  font-style: normal;
+  letter-spacing: 0;
+}
+.section-pad {
+  padding: 88px 64px;
+}
+.eyebrow {
+  font-family: "Inter:Semi Bold", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #79675b;
+}
+.display-title {
+  font-family: "Outfit:ExtraBold", sans-serif;
+  font-size: 76px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.menu-card {
+  overflow: hidden;
+  border: 6px solid #f5efe6;
+  background: #e8ddcf;
+  box-shadow: 0 6px 14px rgba(59, 38, 29, 0.05);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+.menu-card:hover {
+  transform: translateY(-4px);
+}
+.body-copy {
+  font-family: "Inter:Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Inter:Semi Bold", sans-serif;
+  font-size: 12px;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid #d8cabc;
+  background: #f5efe6;
+  padding: 14px;
+  font-family: "Inter:Regular", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #3b261d;
+}
+.field textarea {
+  min-height: 94px;
+  resize: vertical;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #79675b;
+  opacity: 1;
+}
+.map::before,
+.map::after {
+  content: "";
+  position: absolute;
+  background: #d7d8c6;
+  width: 35%;
+  height: 29%;
+  left: 3%;
+  top: 6%;
+}
+.map::after {
+  background: #b9c2ab;
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 3%;
+  height: 40%;
+}
+
+@media (max-width: 767px) {
+  .pill {
+    height: 48px;
+    padding-inline: 20px;
+  }
+  header .pill {
+    height: 30px;
+    padding-inline: 13px;
+    font-size: 11px;
+  }
+  .section-pad {
+    padding: 62px 24px;
+  }
+  .display-title {
+    font-size: 49px;
+  }
+  .body-copy {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 390px) {
+  .editorial-latte {
+    transform: scale(0.94);
+    transform-origin: top center;
+    margin-bottom: -20px;
+  }
+}
