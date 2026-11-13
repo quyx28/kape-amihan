@@ -1,6 +1,6 @@
 import { FormEvent, useMemo, useState } from "react";
 
-const A = "/assets";
+const A = `${import.meta.env.BASE_URL}assets`;
 
 type Product = {
   name: string;
@@ -565,8 +565,9 @@ function App() {
                     href="https://www.facebook.com/jay.jay.964155"
                     target="_blank"
                     rel="noreferrer"
+                    aria-label="Jay Best Bullon on Facebook"
                   >
-                    Facebook profile ↗
+                    <img src={`${A}/f4aec.svg`} alt="" className="facebook-icon size-[18px]" />
                   </a>
                 </article>
                 <article className="contact-card">
@@ -577,8 +578,9 @@ function App() {
                     href="https://www.facebook.com/lorenz.gonzales.900"
                     target="_blank"
                     rel="noreferrer"
+                    aria-label="John Lorenz Gonzales on Facebook"
                   >
-                    Facebook profile ↗
+                    <img src={`${A}/f4aec.svg`} alt="" className="facebook-icon size-[18px]" />
                   </a>
                 </article>
               </div>

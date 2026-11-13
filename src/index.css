@@ -338,6 +338,10 @@
 .contact-card a:hover {
   color: #c86d51;
 }
+.contact-card .facebook-icon {
+  filter: brightness(0) saturate(100%) invert(19%) sepia(13%) saturate(1160%) hue-rotate(335deg)
+    brightness(91%) contrast(91%);
+}
 .field input::placeholder,
 .field textarea::placeholder {
   color: #79675b;
