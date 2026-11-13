@@ -351,11 +351,16 @@
 .map::after {
   content: "";
   position: absolute;
+  z-index: 0;
+  pointer-events: none;
   background: #d7d8c6;
   width: 35%;
   height: 29%;
   left: 3%;
   top: 6%;
+}
+.map > * {
+  z-index: 1;
 }
 .map::after {
   background: #b9c2ab;
