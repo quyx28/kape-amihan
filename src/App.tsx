@@ -290,7 +290,7 @@ function App() {
             desktop="27001.png"
             mobile="10a11.png"
             alt="Iced latte on a stone plinth"
-            className="absolute left-1/2 top-[43px] h-[280px] w-[254px] -translate-x-1/2 object-contain md:top-[-20px] md:h-[445px] md:w-[416px]"
+            className="absolute left-1/2 top-[43px] z-20 h-[280px] w-[254px] -translate-x-1/2 object-contain md:top-[-20px] md:h-[445px] md:w-[416px]"
           />
           <span className="absolute right-[10%] top-[270px] hidden -rotate-8 font-caveat text-[28px] text-[#c86d51] md:block">
             Maayong adlaw! ↖
@@ -573,7 +573,13 @@ function App() {
                   <h3 className="font-outfit-bold text-xl">John Lorenz Gonzales</h3>
                   <a href="tel:+639195020212">0919 502 0212</a>
                   <a href="mailto:jlgonzales@usa.edu.ph">jlgonzales@usa.edu.ph</a>
-                  <span>Facebook link to be added</span>
+                  <a
+                    href="https://www.facebook.com/lorenz.gonzales.900"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Facebook profile ↗
+                  </a>
                 </article>
               </div>
             </div>
