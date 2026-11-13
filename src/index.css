@@ -313,6 +313,31 @@
   min-height: 94px;
   resize: vertical;
 }
+.contact-card {
+  display: flex;
+  min-height: 168px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  border: 1px solid #d8cabc;
+  background: #f5efe6;
+  padding: 18px;
+  box-shadow: 0 6px 14px rgba(59, 38, 29, 0.04);
+}
+.contact-card a,
+.contact-card span {
+  font-family: "Inter:Regular", sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #79675b;
+}
+.contact-card a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.contact-card a:hover {
+  color: #c86d51;
+}
 .field input::placeholder,
 .field textarea::placeholder {
   color: #79675b;

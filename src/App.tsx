@@ -133,7 +133,12 @@ function Button({
 }) {
   const className = `pill ${dark ? "pill-dark" : ""} ${outline ? "pill-outline" : ""}`;
   return href ? (
-    <a className={className} href={href}>
+    <a
+      className={className}
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noreferrer" : undefined}
+    >
       {children}
     </a>
   ) : (
@@ -378,8 +383,8 @@ function App() {
         </div>
         <div className="mt-6 flex items-end justify-between gap-6">
           <p className="max-w-[650px] font-inter-regular text-[11px] leading-[1.6] text-[#79675b] md:text-xs">
-            Made fresh, one cup at a time. Prices in Philippine pesos. Ask us about milk options and
-            today’s pastry selection.
+            Made fresh, one cup at a time. Sample prices are in Philippine pesos; the final menu,
+            prices, milk options, and pastry selection are to be confirmed before launch.
           </p>
           <span className="hidden font-caveat text-[30px] text-[#c86d51] md:block">
             See you over coffee!
@@ -467,6 +472,11 @@ function App() {
               </div>
             ))}
           </div>
+          <p className="font-inter-regular text-[10px] leading-[1.6] text-[#3b261d]">
+            Academic concept offer. Availability, promotion dates, eligibility, and final terms are
+            to be confirmed before launch. Seasonal drinks and community-event announcements will be
+            posted here once verified.
+          </p>
         </div>
         <div className="relative h-[470px] md:h-[560px]">
           <span className="absolute left-2 top-2 z-10 -rotate-9 rounded-full bg-[#8a9a86] px-5 py-3 font-inter-regular text-xs">
@@ -539,12 +549,33 @@ function App() {
               </div>
               <div>
                 <h3 className="font-outfit-regular text-[21px] md:text-[26px]">Come on over</h3>
-                <p className="mt-2 font-inter-regular text-xs text-[#79675b]">8:00 AM – 9:00 PM</p>
+                <p className="mt-2 font-inter-regular text-xs text-[#79675b]">
+                  Proposed hours: 8:00 AM – 9:00 PM
+                </p>
               </div>
             </div>
-            <div className="my-6 space-y-2 font-inter-regular text-xs underline">
-              <p>↗ [Phone number to be confirmed]</p>
-              <p>↗ [Email address to be confirmed]</p>
+            <div className="my-7">
+              <p className="eyebrow mb-4">STUDENT PROJECT CONTACTS</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <article className="contact-card">
+                  <h3 className="font-outfit-bold text-xl">Jay Best Bullon</h3>
+                  <a href="tel:+639205757324">0920 575 7324</a>
+                  <a href="mailto:jbullon@usa.edu.ph">jbullon@usa.edu.ph</a>
+                  <a
+                    href="https://www.facebook.com/jay.jay.964155"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Facebook profile ↗
+                  </a>
+                </article>
+                <article className="contact-card">
+                  <h3 className="font-outfit-bold text-xl">John Lorenz Gonzales</h3>
+                  <a href="tel:+639195020212">0919 502 0212</a>
+                  <a href="mailto:jlgonzales@usa.edu.ph">jlgonzales@usa.edu.ph</a>
+                  <span>Facebook link to be added</span>
+                </article>
+              </div>
             </div>
             <form onSubmit={submit} className="space-y-4">
               <h3 className="font-outfit-bold text-[25px] md:text-[29px]">
@@ -604,12 +635,14 @@ function App() {
                 <p className="mb-3 font-inter-regular text-[11px] leading-[1.5] text-[#79675b]">
                   Illustrative location only—not a verified pin. Exact location to be confirmed.
                 </p>
-                <Button dark>Get Directions ↗</Button>
+                <Button href="https://www.google.com/maps/search/Pototan,+Iloilo" dark>
+                  Get Directions ↗
+                </Button>
               </div>
             </div>
             <p className="mt-4 font-inter-regular text-[11px] leading-[1.6] text-[#79675b]">
-              Contact and street details are placeholders pending verification. Map shown for visual
-              illustration.
+              The street address and map pin are placeholders pending verification. Project-team
+              phone numbers and email addresses are provided above.
             </p>
           </div>
         </div>
@@ -630,20 +663,29 @@ function App() {
           </div>
           <p className="font-caveat text-4xl md:text-5xl">Pahuway. Higop. Balik.</p>
           <div className="flex gap-2.5">
-            {[
-              ["f4aec.svg", "Facebook"],
-              ["d1822.svg", "Instagram"],
-              ["ff1a3.svg", "X"],
-            ].map(([icon, label]) => (
-              <a
-                href="#home"
-                aria-label={label}
-                key={label}
-                className="flex size-10 items-center justify-center rounded-full border border-[#f5efe6]"
-              >
-                <img src={`${A}/${icon}`} alt="" className="size-[18px]" />
-              </a>
-            ))}
+            <a
+              href="https://www.facebook.com/jay.jay.964155"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Jay Best Bullon on Facebook"
+              className="flex size-10 items-center justify-center rounded-full border border-[#f5efe6]"
+            >
+              <img src={`${A}/f4aec.svg`} alt="" className="size-[18px]" />
+            </a>
+            <span
+              aria-label="Official Instagram link to be added"
+              title="Official Instagram link to be added"
+              className="flex size-10 items-center justify-center rounded-full border border-[#f5efe6] opacity-50"
+            >
+              <img src={`${A}/d1822.svg`} alt="" className="size-[18px]" />
+            </span>
+            <span
+              aria-label="Official X link to be added"
+              title="Official X link to be added"
+              className="flex size-10 items-center justify-center rounded-full border border-[#f5efe6] opacity-50"
+            >
+              <img src={`${A}/ff1a3.svg`} alt="" className="size-[18px]" />
+            </span>
           </div>
         </div>
         <div className="my-10 h-px bg-[#f5efe6]/20" />
@@ -659,9 +701,11 @@ function App() {
           <div>
             <p>MADE WITH CARE · AN ACADEMIC CONCEPT</p>
             <p className="mt-2.5 leading-[1.7] text-[#d7c7b7]">
-              Created for University of San Agustin (MM 326). Kape Amihan is presented as an
-              academic promotional concept, not a live café website. Contact details, location
-              graphic, and imagery are illustrative.
+              Planned by Jay Best A. Bullon and John Lorenz Gonzales for University of San Agustin,
+              MM 326 E-Commerce & Internet Marketing, under Dr. Carina Raylos, AFBE. Kape Amihan is
+              an academic promotional concept, not a verified operating café; its business address,
+              menu, prices, hours, promotions, and location graphic remain illustrative until
+              confirmed.
             </p>
           </div>
         </div>
