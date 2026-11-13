@@ -135,6 +135,7 @@
 
 # Published Vercel/GitHub Pages output must contain real static assets.
 dist/**               -filter -diff -merge
+public/**             -filter -diff -merge
 
 # ---------------------------------------------------------------------------
 # CAD & Scientific
