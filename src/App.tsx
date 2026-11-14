@@ -99,21 +99,18 @@ function ResponsiveImage({
   );
 }
 
-function Logo({ light = false, large = false }: { light?: boolean; large?: boolean }) {
-  const wind = light ? "b6316.svg" : large ? "1a1c6.svg" : "d3c5c.svg";
-  const coffee = light ? "4d4d8.svg" : large ? "70cbb.svg" : "e46a1.svg";
-  const mobileWind = light ? wind : large ? "71fe2.svg" : "9762f.svg";
-  const mobileCoffee = light ? coffee : large ? "f1760.svg" : "f05e5.svg";
+function Logo({
+  light = false,
+  large = false,
+  fill = false,
+}: {
+  light?: boolean;
+  large?: boolean;
+  fill?: boolean;
+}) {
   return (
-    <span className={`logo-mark ${large ? "logo-mark-large" : ""}`} aria-hidden="true">
-      <picture>
-        <source media="(max-width: 639px)" srcSet={`${A}/${mobileWind}`} />
-        <img src={`${A}/${wind}`} alt="" />
-      </picture>
-      <picture>
-        <source media="(max-width: 639px)" srcSet={`${A}/${mobileCoffee}`} />
-        <img src={`${A}/${coffee}`} alt="" />
-      </picture>
+    <span className={`logo-mark ${large ? "logo-mark-large" : ""} ${fill ? "logo-mark-fill" : ""}`}>
+      <img src={`${A}/logo-kape.jpg`} alt="Kape Amihan logo" />
     </span>
   );
 }
@@ -246,15 +243,8 @@ function App() {
             <i>|</i>
             <em>Higop</em>
           </div>
-          <div className="flex size-[284px] flex-col items-center justify-center gap-3.5 rounded-full bg-[#f5efe6] text-[#3b261d] md:size-[376px] md:gap-[18px]">
-            <p className="font-inter-regular text-[10px] tracking-[3px]">YOUR NEIGHBORHOOD KAPE</p>
+          <div className="flex size-[284px] items-center justify-center rounded-full bg-[#fff9e8] text-[#3b261d] md:size-[376px]">
             <Logo large />
-            <h1 className="font-outfit-extrabold text-[34px] tracking-[-1.5px] md:text-[45px]">
-              Kape Amihan
-            </h1>
-            <p className="font-inter-semibold text-[9px] tracking-[1px] md:text-[11px]">
-              EST. 2026 • POTOTAN, ILOILO
-            </p>
           </div>
           <div className="ritual-side hidden md:block">
             <i>|</i>
@@ -659,8 +649,8 @@ function App() {
       <footer className="bg-[#3b261d] px-6 py-12 text-[#f5efe6] md:px-16 md:py-[60px]">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div className="flex items-center gap-3">
-            <span className="flex size-16 items-center justify-center rounded-full border border-[#f5efe6]">
-              <Logo light />
+            <span className="flex size-16 items-center justify-center overflow-hidden rounded-full border border-[#fff9e8] bg-[#fff9e8]">
+              <Logo light fill />
             </span>
             <div>
               <strong className="block font-outfit-bold text-3xl">Kape Amihan</strong>
